@@ -1,0 +1,101 @@
+
+.title {
+    color: #fff;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #fefdff;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  border-bottom: 2px solid #533483;
+  padding-bottom: 0.25rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+/* terms button */
+
+.terms__btn_container {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menu__button {
+  font-size: 1rem;
+  color: #f1f1f1;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  transition: color 0.3s ease;
+  border-radius: 1rem;
+}
+
+.menu__button:hover {
+  cursor: pointer;
+  color: green;
+}
+
+
+/* scroll style */
+
+/* Container que vai ter o overflow */
+.scroll_container {
+  max-height: 90vh; 
+  overflow-y: auto; 
+  /* background: rgba(255, 255, 255, 0.1); */
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px); /* efeito blur moderno atrás */
+}
+
+/* Estilos para scrollbars no Chrome, Edge e Safari */
+.scroll_container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll_container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.791);
+  border-radius: 10px;
+}
+
+.scroll_container::-webkit-scrollbar-thumb {
+  background: rgba(246, 245, 247, 0.837); /* roxo semitransparente */
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.scroll_container::-webkit-scrollbar-thumb:hover {
+  background: rgba(83, 52, 131, 0.9);
+}
+
+/* Estilos para scrollbars no Firefox */
+.scroll_container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(246, 245, 247, 0.6) rgba(255, 255, 255, 0.05);
+}
