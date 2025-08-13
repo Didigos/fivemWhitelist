@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../AuthContext";
 import style from "../Header/Header.module.css";
@@ -7,9 +7,10 @@ import style from "../Header/Header.module.css";
 const Header = () => {
   const { user } = useAuth()
 
-  useEffect(()=>{
-    console.log('headerState: ', user)
-  },[user])
+  const handleLogOut = ()=>{
+    sessionStorage.removeItem('token')
+    window.redirect('http://localhost:5173/')
+  }
 
   return (
     <header className={style.menu_header}>
@@ -21,7 +22,7 @@ const Header = () => {
               alt="Header Image"
             />
           </div>
-          <div className={style.header__discord__infosname}>
+          <div className={style.header__discord__username}>
             <span>Seja Bem Vindo</span>
             <span>{user.username ? user.username : "Undefined"}</span>
           </div>
@@ -35,7 +36,7 @@ const Header = () => {
         </div>
       ) : (
         <div className={style.menu__container}>
-          <Link className={style.menu__button} to="/terms">
+          <Link onClick={handleLogOut} className={style.menu__button__logout}>  
             SAIR
           </Link>
         </div>

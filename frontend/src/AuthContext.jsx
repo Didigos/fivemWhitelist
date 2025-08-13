@@ -1,20 +1,20 @@
 import { createContext, useContext, useState, useEffect } from "react";
-
+import { jwtDecode } from "jwt-decode";
 const AuthContext = createContext();
 
+
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => {
-    const storedUser = sessionStorage.getItem("user");
-    return storedUser ? JSON.parse(storedUser) : null;
+  const [user, setUser] = useState(()=>{
+    const token = sessionStorage.getItem('token')
   });
 
-  useEffect(() => {
-    if (user) {
-      sessionStorage.setItem("user", JSON.stringify(user));
-    } else {
-      sessionStorage.removeItem("user");
+  useEffect(()=>{
+    const token = sessionStorage.getItem('token')
+
+    if(token && !user){
+      setUser(jwtDecode(token))
     }
-  }, [user]);
+  },[user ])
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>

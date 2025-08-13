@@ -75,6 +75,9 @@ app.get('/api/discord', async (req, res) => {
         // ETAPA 3 =  MANIPULAR AS INFORMAÇÕES DE USUARIOS RECEBIDAS
         const userData = await userResponse.data
         const { id, email, username, avatar, discriminator } = userData
+        console.log('id: ', id)
+        console.log('avatar: ', avatar)
+        console.log('username: ', username)
 
         // SALVAR OS DADOS NO BANCO DE DADOS
         try {
@@ -97,7 +100,7 @@ app.get('/api/discord', async (req, res) => {
                 await newUser.save();
                 console.log('Novo usuário salvo no banco de dados.');
             }
-            //CRIANDO UM TOKEN JWT
+            //CRIANDO UM TOKEN JWT 
             const token = jwt.sign(
                 { username, avatar, id },
                 process.env.JWT_SECRET,
