@@ -87,7 +87,7 @@
     font-size: 1.2rem;
     margin: 0;
     border: none;
-    text-align: center;
+    text-align: center; 
 }
 
 .admin__status__count {
