@@ -6,6 +6,7 @@ import Terms from './pages/Terms/Terms.jsx'
 import Layout from './components/layout/Layout.jsx'
 import UserPainel from './pages/userPainel/userPainel.jsx'
 import { AuthProvider } from './AuthContext.jsx'
+import Admin from './pages/Admin/Admin.jsx'
 
 createRoot(document.getElementById('root')).render(
   <>
@@ -14,11 +15,10 @@ createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/usercontrol" element={<UserPainel />} />
           </Route>
-          <Route>
-            <Route path="/terms" element={<Terms />} />
-          </Route>
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/user/control" element={<UserPainel />} />
+          <Route path="/user/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
