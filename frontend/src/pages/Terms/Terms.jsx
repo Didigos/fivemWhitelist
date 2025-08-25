@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import style from "./Terms.module.css"; // Supondo que você tenha um CSS module
+import style from "./terms.module.css";
 
 const Terms = () => {
   return (
