@@ -1,9 +1,10 @@
 import style from "./terms.module.css";
-
+import { Link } from "react-router-dom";
 const Terms = () => {
   return (
+    
     <>
-      <section className={style.scroll_container}>
+      <section className={style.scroll_container}> 
         <h1 className={style.title}>Termos de Utilização</h1>
 
         <p>
@@ -84,12 +85,12 @@ const Terms = () => {
           >
             Concordo
           </a>
-          <a
+          <Link
             className={style.menu__button}
-            href="http://localhost:5173/"
+            to={'/'}
           >
             Não Concordo
-          </a>
+          </Link>
         </div>
       </section>
     </>
